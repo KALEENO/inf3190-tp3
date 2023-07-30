@@ -1,0 +1,98 @@
+{% extends 'layout.html'%}
+{% block style %}
+    <link rel="stylesheet" href="/css/adoption.css">
+{% endblock %}
+{% block content %}
+    <section id="section-soumission">
+        <h2>Mise en adoption</h2>
+        <div>
+            <form id="formulaire" action="/soumission" method="post">
+                <div class="contenu-formulaire" id="nom-form">
+                    <label for="nom">Quel est le nom de l'animal?</label>
+                    <div class="input-icons">
+                        <input type="text" name="nom" id="nom" autocomplete="off">
+                        <span class="succes-icon"><i class="fa-solid fa-circle-check"></i></span>
+                        <span class="erreur-icon"><i class="fa-solid fa-circle-exclamation fa-bounce"></i></span>
+                        <small class="erreur-message">Entrez un nom valide (entre 3 et 20 lettres).</small>
+                    </div>
+                </div>
+                <div class="contenu-formulaire" id="espece-form">
+                    <label for="espece">Quelle est l'espèce de votre animal?</label>
+                    <div class="input-icons">
+                        <input type="text" name="espece" id="espece" autocomplete="off">
+                        <span class="succes-icon"><i class="fa-solid fa-circle-check"></i></span>
+                        <span class="erreur-icon"><i class="fa-solid fa-circle-exclamation fa-bounce"></i></span>
+                        <small class="erreur-message">Entrez une espèce valide (ex. Chien, chat, poisson, serpent, etc.).</small>
+                    </div>
+                </div>
+                <div class="contenu-formulaire" id="race-form">
+                    <label for="race">Quelle est la race de votre animal?</label> 
+                    <div class="input-icons">
+                        <input type="text" name="race" id="race" autocomplete="off">
+                        <span class="succes-icon"><i class="fa-solid fa-circle-check"></i></span>
+                        <span class="erreur-icon"><i class="fa-solid fa-circle-exclamation fa-bounce"></i></span>
+                        <small class="erreur-message">Entrez une race valide (ex. Schnauzer, Bengal, etc.).</small>
+                    </div>
+                </div>
+                <div class="contenu-formulaire" id="age-form">
+                    <label for="age">Quel âge à votre animal?</label>
+                    <div class="input-icons">
+                        <input type="text" name="age" id="age" autocomplete="off">
+                        <span class="succes-icon"><i class="fa-solid fa-circle-check"></i></span>
+                        <span class="erreur-icon"><i class="fa-solid fa-circle-exclamation fa-bounce"></i></span>
+                        <small class="erreur-message">Entrez un âge valide (entre 0 et 30).</small>
+                    </div>
+                </div>
+                <div class="contenu-formulaire" id="description-form">
+                    <label for="description">Ajouter une description de votre animal</label>
+                    <div class="input-icons">
+                        <textarea name="description" id="description" cols="30" rows="3" maxlength="100" autocomplete="off"></textarea>
+                        <span class="succes-icon"><i class="fa-solid fa-circle-check"></i></span>
+                        <span class="erreur-icon"><i class="fa-solid fa-circle-exclamation fa-bounce"></i></span>
+                        <small class="erreur-message">Entrez une description valide.</small>
+                    </div>
+                </div>
+                <div class="contenu-formulaire" id="courriel-form">
+                    <label for="courriel">Quelle est l'adresse courriel du propriétaire?</label>
+                    <div class="input-icons">
+                        <input type="text" name="courriel" id="courriel" autocomplete="off">
+                        <span class="succes-icon"><i class="fa-solid fa-circle-check"></i></span>
+                        <span class="erreur-icon"><i class="fa-solid fa-circle-exclamation fa-bounce"></i></span>
+                        <small class="erreur-message">Entrez une adresse courriel valide.</small>
+                    </div>
+                </div>
+                <div class="contenu-formulaire" id="adresse-form">
+                    <label for="adresse">Quelle est l'adresse civique où l'on peut récupérer l'animal?</label>
+                    <div class="input-icons">
+                        <input type="text" name="adresse" id="adresse" autocomplete="off">
+                        <span class="succes-icon"><i class="fa-solid fa-circle-check"></i></span>
+                        <span class="erreur-icon"><i class="fa-solid fa-circle-exclamation fa-bounce"></i></span>
+                        <small class="erreur-message">Entrez une adresse civique valide.</small>
+                    </div>
+                </div>
+                <div class="contenu-formulaire" id="ville-form">
+                    <label for="ville">Quelle est la ville?</label>
+                    <div class="input-icons">
+                        <input type="text" name="ville" id="ville" autocomplete="off">
+                        <span class="succes-icon"><i class="fa-solid fa-circle-check"></i></span>
+                        <span class="erreur-icon"><i class="fa-solid fa-circle-exclamation fa-bounce"></i></span>
+                        <small class="erreur-message">Entrez une ville valide.</small>
+                    </div>
+                </div>
+                <div class="contenu-formulaire" id="cp-form">
+                    <label for="cp">Quel est le code postal?</label>
+                    <div class="input-icons">
+                        <input type="text" name="cp" id="cp" autocomplete="off" oninput="this.value = this.value.toUpperCase()" maxlength="7">
+                        <span class="succes-icon"><i class="fa-solid fa-circle-check"></i></span>
+                        <span class="erreur-icon"><i class="fa-solid fa-circle-exclamation fa-bounce"></i></span>
+                        <small class="erreur-message">Entrez un code postal valide. (ex. A1A 1A1)</small>
+                    </div>
+                </div>
+                <button>Soumettre</button>
+            </form>
+        </div>
+    </section>
+{% endblock %}
+{% block script %}
+    <script src="/js/script.js"></script>
+{% endblock %}

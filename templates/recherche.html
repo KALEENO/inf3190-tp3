@@ -1,0 +1,38 @@
+{% extends 'layout.html' %}
+{% block content %}
+    <div class="container">
+        <article>
+            <h3>Voici le résultat de votre recherche:</h3>
+            {% for animal in animals %}
+            <div class="col-container" >
+                <div>
+                    <h4>{{ animal.nom }}</h4>
+                    <div class="animal-info-card">
+                        <a href="/page-animal/{{ animal.espece|lower }}/{{ animal.id }}" target="_blank">
+                            <img src="/img/{{ animal.espece }}/{{ animal.espece }}.jpeg" alt="Image d'un {{ animal.espece }}">
+                        </a>
+                        <table>
+                            <tr>
+                                <th>Species:</th>
+                                <td>{{ animal.espece }}</td>
+                            </tr>
+                            <tr>
+                                <th>Race:</th>
+                                <td>{{ animal.race }}</td>
+                            </tr>
+                            <tr>
+                                <th>Age:</th>
+                                <td>{{ animal.age }}</td>
+                            </tr>
+                            <tr>
+                                <th>Description:</th>
+                                <td>{{ animal.description }}</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </article>
+    </div>
+{% endblock %}

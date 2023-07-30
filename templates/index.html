@@ -1,0 +1,46 @@
+{% extends 'layout.html' %}
+{% block content %}
+    <div class="container">
+        <h2>Bienvenue au CAAM, le Centre d'adoption d'animaux à Montréal !</h2>
+        <div class="row-container">
+            <p>Au CAAM, notre mission est de créer des liens durables entre les animaux aimants et les familles aimantes. Nous croyons que chaque animal mérite un foyer aimant et responsable, et nous nous efforçons de trouver la meilleure correspondance entre nos précieux protégés et les futurs parents adoptifs.</p>
+            <p>Nos amis à quatre pattes proviennent de divers horizons, chacun ayant son propre récit à partager. Nous offrons une grande variété d'animaux à l'adoption, tels que des chats, des chiens, des moutons, des serpents et bien d'autres. Peu importe l'espèce que vous recherchez, vous pourrez trouver un compagnon aimant au CAAM.</p>
+        </div>
+        <article>
+            <h3>Voici quelques-uns de nos animaux prêt à être adopter:</h3>
+            {% for animal in animals %}
+            <div class="col-container" >
+                <div>
+                    <h4>{{ animal.nom }}</h4>
+                    <div class="animal-info-card">
+                        <a href="/page-animal/{{ animal.espece|lower}}/{{ animal.id }}" target="_blank">
+                            <img src="/img/{{ animal.espece }}/{{ animal.espece }}.jpeg" alt="Image d'un {{ animal.espece }}">
+                        </a>
+                        <table>
+                            <tr>
+                                <th>Species:</th>
+                                <td>{{ animal.espece }}</td>
+                            </tr>
+                            <tr>
+                                <th>Race:</th>
+                                <td>{{ animal.race }}</td>
+                            </tr>
+                            <tr>
+                                <th>Age:</th>
+                                <td>{{ animal.age }}</td>
+                            </tr>
+                            <tr>
+                                <th>Description:</th>
+                                <td>{{ animal.description }}</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </article>
+        <div class="col-container">
+            <p>Rejoignez notre communauté dévouée d'amoureux des animaux et offrez une seconde chance à un compagnon qui ne demande qu'à partager votre affection. Consultez nos profils d'animaux en attente d'adoption et préparez-vous à rencontrer votre nouveau meilleur ami.<br><br>Ensemble, nous pouvons créer de belles histoires d'amour et de fidélité qui dureront toute une vie. Rejoignez-nous au CAAM aujourd'hui !</p>
+        </div>       
+    </div>
+{% endblock %}

@@ -1,0 +1,173 @@
+section {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 0 12rem;
+    background-color: rgba(250, 250, 250, 0.3);
+    backdrop-filter: blur(1rem);
+    border-radius: 1rem;
+    padding: 3rem;
+}
+
+section h2 {
+    margin-bottom: 2rem;
+}
+
+section h2,
+section h3 {
+    color: #003044;
+    font-size: 3rem;
+    font-weight: 700;
+    font-family: 'Ranchers', cursive;
+    cursor: default;
+}
+
+section div {
+    padding: 1rem 0;
+}
+
+section label,
+section input,
+section textarea,
+p {
+    font-size: 1.8rem;
+}
+
+#formulaire,
+#message-confirmation {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    width: 50rem;
+    padding: 4rem;
+    background-color: white;
+    border-radius: 1rem;
+    border: 0.1rem solid #9a9a9a;
+    box-shadow: 0 0 3rem rgba(0, 0, 0, 0.5);
+    color: black;
+    line-height: 1.7;
+}
+
+.contenu-formulaire {
+    display: flex;
+    flex-direction: column;
+}
+
+.contenu-formulaire label {
+    padding: 0.5rem;
+}
+
+.contenu-formulaire textarea {
+    resize: none;
+}
+
+.contenu-formulaire input, 
+.contenu-formulaire textarea {
+    border-radius: 0.5rem;
+    border: 0.2rem solid #bdbdbd;
+    padding: 1rem;
+    padding-right: 3.5rem;
+    width: 100%;
+    transition: border-color 0.5s ease;
+}
+
+.contenu-formulaire input:focus, 
+.contenu-formulaire textarea:focus {
+    outline: 0;
+    border-color: black;
+}
+
+.contenu-formulaire.succes input,
+.contenu-formulaire.succes textarea {
+    border-color: #0fd035;
+}
+
+.contenu-formulaire.erreur input,
+.contenu-formulaire.erreur textarea {
+    border-color: #dc1010;
+}
+
+.succes-icon, 
+.erreur-icon {
+    position: absolute;
+    top: 50%;
+    right: 1.3rem;
+    transform: translateY(-50%);
+    visibility: hidden;
+}
+
+.succes-icon {
+    color: #0fd035;
+}
+
+.erreur-icon {
+    color: #dc1010;
+}
+
+.contenu-formulaire.succes .succes-icon,
+.contenu-formulaire.erreur .erreur-icon,
+.contenu-formulaire.erreur small {
+    visibility: visible;
+}
+
+.input-icons {
+    position: relative;
+}
+
+.erreur-message {
+    position: absolute;
+    top: 6rem;
+    left: 0.5rem;
+    color: #dc1010;
+    font-size: 1.5rem;
+    visibility: hidden;
+}
+
+textarea ~ .erreur-message {
+    top: 11rem;
+}
+
+button {
+    border-radius: 3rem;
+    border: none;
+    cursor: pointer;
+    padding: 1.5rem;
+    background-color: #637C88;
+    color: white;
+    font-size: 2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-top: 1rem;
+    width: 100%;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background-color: #003044;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.3);
+}
+
+button:active {
+    transform: scale(0.93);
+    box-shadow: 0 0 3rem rgba(0, 0, 0, 0.9);
+}
+
+#message-confirmation {
+    display: flex;
+    align-items: center;
+    width: 70rem;
+    height: 50rem;
+    justify-content: space-around;
+}
+
+#message-confirmation a {
+    text-decoration: none;
+}
+
+#message-confirmation div {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    flex-direction: column;
+}

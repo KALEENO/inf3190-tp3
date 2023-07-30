@@ -1,0 +1,30 @@
+.not-found-container {
+    display: flex;
+    justify-content: space-around;
+}
+
+.not-found-container aside {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding-left: 2%;
+    padding-bottom: 3rem;
+    width: 40%;
+}
+
+.not-found-container h1 {
+    font-family: 'Ranchers', cursive;
+    font-size: 6rem;
+    color: #637C88;
+    cursor: default;
+}
+
+.not-found-container h2 {
+    font-family: 'Ranchers', cursive;
+    font-size: 2.5rem;
+    color: #003044;
+}
+
+.not-found-container img {
+    width: 50%;
+}

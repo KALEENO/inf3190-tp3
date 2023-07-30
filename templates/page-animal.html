@@ -1,0 +1,50 @@
+{% extends 'layout.html' %}
+{% block content %}
+    <div class="col-container" id="page-animal-container">
+        <div>
+            <h4>{{ animal.nom }}</h4>
+            <div class="animal-info-page">
+                <img src="/img/{{ animal.espece }}/{{ animal.espece }}.jpeg" alt="Image d'un {{ animal.espece }}">
+                <table>
+                    <tr>
+                        <th>Species:</th>
+                        <td>{{ animal.espece }}</td>
+                    </tr>
+                    <tr>
+                        <th>Race:</th>
+                        <td>{{ animal.race }}</td>
+                    </tr>
+                    <tr>
+                        <th>Age:</th>
+                        <td>{{ animal.age }}</td>
+                    </tr>
+                    <tr>
+                        <th>Description:</th>
+                        <td>{{ animal.description }}</td>
+                    </tr>
+                    <tr>
+                        <th>Courriel:</th>
+                        <td><a href="mailto:{{ animal.courriel }}">{{ animal.courriel }}</a></td>
+                    </tr>
+                    <tr>
+                        <th>Adresse:</th>
+                        <td>{{ animal.adresse }}</td>
+                    </tr>
+                    <tr>
+                        <th>Ville:</th>
+                        <td>{{ animal.ville }}</td>
+                    </tr>
+                    <tr>
+                        <th>Code Postal:</th>
+                        <td>{{ animal.cp }}</td>
+                    </tr>
+                </table>
+                <a href="mailto:{{ animal.courriel }}">
+                    <span class="page-animal-button">
+                        Contacter le propriétaire de {{ animal.nom }}
+                    </span>
+                </a>
+            </div>
+        </div>
+    </div>
+{% endblock %}

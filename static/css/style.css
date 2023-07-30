@@ -1,0 +1,448 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Source Sans 3', sans-serif;
+}
+
+html {
+    font-size: 10px;
+}
+
+body {
+    font-size: 1.6rem;
+    background: linear-gradient(to right, #ff8143,#ffCC38);
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    padding: 5rem;
+}  
+
+/* HEADER */
+
+header,
+.not-found-container {
+    background-color: #fff;
+    backdrop-filter: blur(5px);
+    border-radius: 2rem;
+    margin: 2rem;
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 0 2rem #fff;
+}
+
+header a {
+    text-decoration: none;
+}
+
+header a div {
+    display: flex;
+    align-items: center;
+}
+
+#logo {
+    width: 10rem;
+    border-radius: 50%;
+    background-blend-mode: color-burn;
+    transform: scale(0.95);
+}
+header h1 {
+    color: #003044;
+    font-family: 'Ranchers', cursive;
+    font-size: 5rem;
+}
+
+nav {
+    margin: 0 2rem;
+}
+
+nav ul {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: 1rem;
+    list-style: none;
+}
+
+nav a {
+    color: black;
+    font-family: 'Ranchers', cursive;
+    font-size: 2rem;
+    padding: 1rem;
+    text-decoration: none;
+    border-radius: 2rem;
+    transition: all 0.3s ease;
+}
+
+nav a:hover {
+    background-color: #637C88;
+    box-shadow: 0 0 2rem #637C88;
+    padding: 2rem 1rem;
+    color: #fff;
+}
+
+nav a:active {
+    background-color: #003044;
+}
+
+
+
+/* MAIN */
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    width: 80%;
+    background-color: rgba(250, 250, 250, 0.3);
+    backdrop-filter: blur(1rem);
+    border-radius: 1rem;
+    padding: 3rem;   
+}
+
+h2,
+h3, 
+h4, 
+h5 {
+    cursor: default;
+}
+
+.container h2 {
+    font-family: 'Ranchers', cursive;
+    font-size: 4rem;
+    color: #003044;
+}
+
+.container p {
+    font-size: 1.8rem;
+}
+
+.container img {
+    width: 90%;
+    border-radius: 2rem;
+}
+
+.row-container,
+.random-animal-container {
+    display: flex;
+    align-items: stretch;
+    padding: 2rem;
+    border-radius: 1rem;
+    gap: 2rem;
+}
+
+.random-animal-container {
+    background-color: #fff;
+}
+
+.row-container p,
+.col-container p {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 0 3rem rgba(100, 100, 100, 0.5);
+}
+
+.random-animal-container {
+    flex-direction: column;
+}
+
+article {
+    margin: 1rem 0;
+    padding: 0 3rem 3rem;
+}
+
+article h3 {
+    color: #003044;
+    font-family: 'Ranchers', cursive;
+    font-size: 3rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    margin-left: 2rem;
+    padding: 1rem 15px;
+    cursor: default;
+}
+
+.col-container {
+    display: flex;
+    flex-direction: column;
+    padding: 0 3rem 3rem;
+    gap: 1.5rem;
+
+}
+
+.col-container h4,
+.col-container h5 {
+    margin-bottom: 1rem;
+    padding: 1rem;
+}
+
+.col-container h4 {
+    font-family: 'Ranchers', cursive;
+    font-size: 3rem;
+    color: #003044;
+}
+
+.col-container h5 {
+    font-size: 2rem;
+    text-decoration: underline;
+} 
+
+.col-container > div {
+    background-color: rgba(250, 250, 250, 0.3);
+    backdrop-filter: blur(1rem);
+    border-radius: 1rem;
+    padding: 1rem;
+    gap: 1.5rem;
+}
+
+.col-container p,
+#accueil-animals p {
+    background-color: #fff;
+    line-height: 1.7;
+}
+
+#apropos-container p {
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 0 3rem rgba(100, 100, 100, 0.5);
+}
+
+.animal-info-card,
+.animal-info-page {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 0 3rem rgba(100, 100, 100, 0.5);
+}
+
+.animal-info-card img {
+    border-radius: 2rem;
+    width: 40%;
+    box-shadow: 0 0 2rem rgba(50, 50, 50, 0.7);
+}
+
+.animal-info-card a {
+    width: 50%;
+}
+
+.animal-info-card td>a {
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+}
+
+.animal-info-card td>a:hover,
+.animal-info-page td>a:hover {
+    text-decoration: underline;
+}
+
+.animal-info-card a>img {
+    width: 100%;
+    cursor: pointer;
+    transition: all 0.3s ease-out;
+}
+
+.animal-info-card a>img:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 2rem rgba(0, 0, 0, 0.7);
+}
+
+.animal-info-card div {
+    width: 70%;
+}
+
+#page-animal-container {
+    margin: 0 20%;
+    padding: 0 3rem;
+}
+
+.animal-info-page {
+    flex-direction: column;
+    gap: 5rem;
+}
+
+.animal-info-page img {
+    border-radius: 2rem;
+    box-shadow: 0 0 2rem rgba(50, 50, 50, 0.7);
+    margin-top: 1rem;
+    width: 70%;
+    transition: all 0.5s ease;
+}
+
+.animal-info-page img:hover {
+    transform: scale(1.05);
+}
+
+.animal-info-page a {
+    color: black;
+    text-decoration: none;
+    margin: 3rem 0;
+}
+
+.animal-info-page table {
+    width: auto;
+    border-collapse: collapse;
+}
+
+.page-animal-button {
+    padding: 3rem;
+    background-color: #637C88;
+    width: 100%;
+    color: #fff;
+    font-size: 2rem;
+    font-family: 'Ranchers', cursive;
+    border-radius: 2rem;
+    transition: all 0.3s ease-in;
+}
+
+.page-animal-button:hover {
+    padding: 4rem 3rem;
+    background-color: #003044;
+    box-shadow: 0 0 3rem rgba(100, 100, 100, 0.5);
+}
+
+.page-animal-button:active {
+    box-shadow: 0 0 4rem rgba(0, 0, 0, 0.7);
+}
+
+.search-bar {
+    position: relative;
+    width: 30%;
+    margin-right: 3rem;
+}
+
+.search-bar span {
+    position: absolute;
+    left: 1.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    font-size: 2rem;
+    cursor: default;    /* TODO: Not working...*/
+}
+
+.search-bar input {
+    padding: 1.5rem;
+    font-size: 1.8rem;
+    width: 100%;
+    border-radius: 2rem;
+    border: none;
+    box-shadow: 0 0 1rem rgba(100, 100, 100, 0.5);
+    outline: none;
+    padding-left: 4.5rem;
+    transition: all 0.3s ease-out;
+}
+
+.search-bar input:focus {
+    box-shadow: 0 0 1rem #003044;
+    outline: 0.2rem solid #007bff;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-left: 1rem;
+}
+
+table th,
+table td {
+    text-align: left;
+    padding: 0.5rem;
+}
+
+table th {
+    font-weight: 700;
+    width: 0%;
+    cursor: default;
+}
+
+
+/* FOOTER */
+
+footer {
+    background-color: rgba(250, 250, 250, 0.3);
+    backdrop-filter: blur(1rem);
+    padding: 3rem;
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+footer h5 {
+    font-family: 'Ranchers', cursive;
+    font-size: 4rem;
+    margin-bottom: 2rem;
+    cursor: default;
+}
+
+.footer-main {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.footer-contact p {
+    font-size: 1.6rem;
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.footer-contact a {
+    text-decoration: none;
+    color: #003044;
+}
+
+.footer-contact a:hover {
+    text-decoration: underline;
+}
+
+.footer-social {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.social-media-icons {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    cursor: pointer;
+}
+
+.social-media-icons a,
+.footer-contact a>i {
+    color: black;
+    transition: all 0.3s ease;
+}
+
+.social-media-icons a:hover,
+.footer-contact a>i:hover {
+    transform: scale(1.5);
+}
+
+.social-media-icons a:active,
+.footer-contact a>i:active {
+    transform: scale(0.95);
+}
+
+.footer-bottom p {
+    font-size: 1.5rem;
+    cursor: default;
+}
