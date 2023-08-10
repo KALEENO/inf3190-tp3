@@ -28,7 +28,7 @@ python3 -m venv .venv
 
 # Pour Windows
 py -3 -m venv .venv
-.venv\Scripts\activate
+.venv/Scripts/activate
 ```
 ```bash
 # Installation des dépendances du projet
