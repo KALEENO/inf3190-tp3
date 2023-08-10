@@ -1,4 +1,4 @@
-# Copyright 2023 Issam Khalladi (KHAI27029800)
+# Copyright 2023 Issam Khalladi
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -44,7 +44,10 @@ def index():
     db = get_db()
     animals = db.get_animaux()
     random_animals = random.sample(animals, 5)
-    return render_template('index.html', title='Accueil', animals=random_animals)
+    return render_template(
+        'index.html',
+        title='Accueil',
+        animals=random_animals)
 
 
 @app.route('/adoption')
@@ -67,27 +70,33 @@ def recherche():
         if (search_query.isdigit() and int(search_query) == animal['age']):
             filter_animals_search.append(animal)
         elif (
-            search_query.lower() in animal['nom'].lower() or 
-            search_query.lower() in animal['espece'].lower() or 
-            search_query.lower() in animal['race'].lower() or 
-            search_query.lower() in animal['description'].lower() or 
-            search_query.lower() in animal['courriel'].lower() or 
-            search_query.lower() in animal['adresse'].lower() or 
-            search_query.lower() in animal['ville'].lower() or 
+            search_query.lower() in animal['nom'].lower() or
+            search_query.lower() in animal['espece'].lower() or
+            search_query.lower() in animal['race'].lower() or
+            search_query.lower() in animal['description'].lower() or
+            search_query.lower() in animal['courriel'].lower() or
+            search_query.lower() in animal['adresse'].lower() or
+            search_query.lower() in animal['ville'].lower() or
             search_query.lower() in animal['cp'].lower()
-            ):
+        ):
             filter_animals_search.append(animal)
     if not filter_animals_search:
         abort(404)
-    return render_template('recherche.html', title=search_query ,animals=filter_animals_search)
-        
-        
+    return render_template(
+        'recherche.html',
+        title=search_query,
+        animals=filter_animals_search)
+
+
 @app.route('/page-animal/<animal_espece>/<animal_id>')
 def page_animal(animal_id, animal_espece):
     db = get_db()
     animal_id = db.get_animal(animal_id)
     animal_espece = db.get_animal(animal_espece)
-    return render_template('page-animal.html', title="Page d'Animal", animal=animal_id)
+    return render_template(
+        'page-animal.html',
+        title="Page d'Animal",
+        animal=animal_id)
 
 
 @app.route('/soumission', methods=['POST'])
@@ -110,7 +119,8 @@ def soumission():
         form_invalid = True
     if not race.strip() or "," in race:
         form_invalid = True
-    if not age.strip() or not age.isdigit() or "," in age or int(age) < 0 or int(age) > 30:
+    if not age.strip() or not age.isdigit() or "," in age or int(
+            age) < 0 or int(age) > 30:
         form_invalid = True
     if not description.strip() or "," in description:
         form_invalid = True
@@ -126,7 +136,16 @@ def soumission():
     if form_invalid:
         abort(400)
     else:
-        db.add_animal(nom,espece,race,age,description,courriel,adresse,ville,cp)
+        db.add_animal(
+            nom,
+            espece,
+            race,
+            age,
+            description,
+            courriel,
+            adresse,
+            ville,
+            cp)
 
     return redirect('/confirmation')
 
